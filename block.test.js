@@ -14,7 +14,9 @@ describe('Block', () => {
          timestamp,
          lastHash,
          hash,
-         data   });
+         data, 
+         nonce,
+         difficulty   });
 
     it('has a timestamp, lastHash, hash, and dataproperty', () =>{
         expect(block.timestamp).toEqual(timestamp);
@@ -70,7 +72,7 @@ describe('Block', () => {
         })
 
         it('sets a `hash` that matches the difficulty criteria', () => {
-            expect(mineBlock.hash.substring(0,minedBlock.difficulty))
+            expect(minedBlock.hash.substring(0,minedBlock.difficulty))
             .toEqual('0'.repeat(minedBlock.difficulty));
         });
     });
